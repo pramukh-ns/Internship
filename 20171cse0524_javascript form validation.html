@@ -1,0 +1,261 @@
+<html>
+<head>
+<style>
+
+input[type=text], select { padding: 12px 15px;margin: 8px 0;border:1px solid black;
+box-sizing: border-box;font-size:16px;}
+
+div.z{display:inline-block;background-color:#4B0082;
+color:white; width:1195px;height:100px;
+text-align:center;font-family:arial;
+margin-left: 60px;margin-top:-10px;padding: 20px;border:1px;
+}
+div.y{display:inline-block;background-color:#A52A2A;
+color:white; width:1195px;height:80px;
+text-align:center;font-family:arial;
+margin-left: 60px;margin-top:-10px;padding: 20px;border:1px;
+}
+div.x{display:inline-block;background-color:#D2691E;
+color:white; width:1195px;height:80px;
+text-align:center;font-family:arial;
+margin-left:60px;margin-top:-10px;padding: 20px;border:1px;
+}
+div.w{background-color:#DC143C;
+color:white; width:1195px;height:80px;
+text-align:center;font-family:arial;
+margin-left: 60px;margin-top:-10px;padding: 20px;border:1px;
+}
+div.v{background-color:#FF4500;
+color:white; width:1195px;height:80px;
+text-align:center;font-family:arial;
+margin-left: 60px;margin-top:-10px;padding: 20px;border:1px;
+}
+div.u{background-color:#008000;
+color:white; width:1195px;height:80px;
+text-align:center;font-family:arial;
+margin-left: 60px;margin-top:-10px;padding: 20px;border:1px;
+}
+div.t{display:inline-block;background-color:#1E90FF;
+color:white; width:1195px;height:80px;
+text-align:center;font-family:arial;
+margin-left: 60px;margin-top:-10px;padding: 20px;border:1px;
+}
+p{font-family:arial;margin-left: 80px;font-size:22px;}
+
+input[type=Submit]{background-color: #4CAF50;color: white;padding: 24px 40px;
+margin: 8px 0px;margin-left:620px;border: none;border-radius: 8px;cursor: pointer;}
+input[type=Submit]:hover { background-color: #45a049;}
+</style>
+
+<script>
+function am()
+{
+var phone = document.f1.phno.value;
+if(isNaN(phone))
+{
+alert("Invalid phone number.");
+return false;
+}
+else if(phone.length!=10)
+{
+alert("Phone number should be 10 characters.");
+return false;
+}
+
+var val = document.getElementById('poc').value;
+if(val=="p")
+{
+var x=document.f1.ten.value;
+if(x>=10 && x<=99)
+{
+var n=x.charAt(5);
+if(n!="")
+{alert("Percentage should have 2 digits after decimal.");return false;}
+}
+else if(x<10)
+{
+var n=x.charAt(4);
+if(n!="")
+{alert("Percentage should have 2 digits after decimal.");return false;}
+}
+}
+else if(val=="c")
+{var x=document.f1.ten.value;
+if(x!="A" && x!="B" && x!="C")  
+{
+alert("Grades should be A, B or C.");
+return false;}}
+
+var va = document.getElementById('po').value;
+if(va=="p")
+{
+var x1=document.f1.twe.value;
+if(x1>=10 && x1<=99)
+{
+var n1=x.charAt(5);
+if(n1!="")
+{alert("Percentage should have 2 digits after decimal.");return false;}
+}
+else if(x1<10)
+{
+var n1=x1.charAt(4);
+if(n1!="")
+{alert("Percentage should have 2 digits after decimal.");return false;}
+}
+}
+else if(va=="c")
+{var x=document.f1.twe.value;
+if(x!="A" && x!="B" && x!="C")  
+{
+alert("Grades should be A, B or C.");
+return false;}}
+
+var v = document.getElementById('p').value;
+if(v=="p")
+{
+var x2=document.f1.deg.value;
+if(x2>=10 && x2<=99)
+{
+var n2=x2.charAt(5);
+if(n2!="")
+{alert("Percentage should have 2 digits after decimal.");return false;}
+}
+else if(x2<10)
+{
+var n2=x2.charAt(4);
+if(n2!="")
+{alert("Percentage should have 2 digits after decimal.");return false;}
+}
+}
+else if(v=="c")
+{var x=document.f1.deg.value;
+if(x!="A" && x!="B" && x!="C")  
+{
+alert("Grades should be A, B or C.");
+return false;}}
+
+var s=document.getElementById('special').value;
+if(s=="-" )
+{
+alert("Please select a specialization.");
+return false;}
+
+var l=document.getElementById("yop").value
+var m;
+m=new Date(l);
+var n = m.getFullYear()
+if(n!=2020 && n!=2021 && n!=2022)
+{
+alert("NOT ELIGIBLE.");
+return false;}
+
+if(!document.getElementById("ts").checked&&!document.getElementById("ts1").checked
+&&!document.getElementById("ts2").checked&&!document.getElementById("ts3").checked
+&&!document.getElementById("ts4").checked&&!document.getElementById("ts5").checked)
+{
+alert("Please select atleast one technical skill.");
+return false;}
+alert("Your form is successfully submitted. You are registered for the JOB FAIR.");
+}
+
+</script>
+</head>
+<body>
+<div class="z"><h1 align="center">Registration form</h1></div>
+<br />
+<br />
+<br />
+
+<div class="y"><h2 align="center">Personal details</h2></div>
+<form name="f1" onsubmit="return am()">
+<p ><b> Full Name:</b> <br /><br />
+<input type="text"  placeholder="First Name" size="25"name="fname" required>&emsp;
+<input type="text" placeholder="last Name" size="25" name="lname" required>
+<br />
+<p ><b> Age:</b> <br /><br />
+<input type="text"  placeholder="eg-23" size="25" name="age" required>
+<br />
+<p><b>Gender:</b><br /><br />
+<input type="radio" name="g" required>Male&emsp;&emsp;
+<input type="radio" name="g" required>Female<br /><br />
+<b>E-mail address:</b><br /><br />
+<input type="text" size="25" placeholder="eg-abc@xyz.com" name="em" required></p>
+
+<p ><b>Phone No:</b><br /><br />
+<select id="no">
+<option value="India">+91</option>
+<option value="Antarctica">+672</option>
+<option value="Colombia">+57</option>
+<option value="Guinea">+224</option>
+<option value="Italy">+39</option>
+<input type="text" size="25" placeholder="9876543210" name="phno" >
+<br />
+<br />
+<b>Address:</b><br /><br />
+<textarea rows="15" cols="60"></textarea></p>
+
+<br />
+<div class="x"><h2 align="center">Upload section</h2></div>
+<p ><b>Upload photo:</b><br /><br />
+<input type="file"></button><br /><br />
+<b>Upload signature:</b><br /><br />
+<input type="file"></button><br /><br />
+<b>Resume upload:</b><br /><br />
+<input type="file"></button>
+
+<br />
+<div class="w"><h2 align="center">Marks section</h2></div>
+<p ><b>Your 10th Percentage/CGPA:</b><br /><br />
+<input type="text" size="25" name="ten" >
+<select id="poc">
+<option value="-">-</option>
+<option value="p">%</option>
+<option value="c">CGPA</option></select>
+<p ><b>Your PUC/12th Percentage/CGPA:</b><br /><br />
+<input type="text" size="25" name="twe" >
+<select id="po">
+<option value="-">-</option>
+<option value="p">%</option>
+<option value="c">CGPA</option></select>
+<p ><b>Your Degree/UG Percentage/CGPA:</b><br /><br />
+<input type="text" size="25" name="deg" >
+<select id="p">
+<option value="-">-</option>
+<option value="p">%</option>
+<option value="c">CGPA</option></select>
+
+<br />
+<div class="v"><h2 align="center">Specialization</h2></div>
+<p ><b>Select your Specialization:</b><br /><br />
+<select id="special">
+<option value="-">---------</option>
+<option value="cse">Computer Science and Engineering - CSE</option>
+<option value="is">Interent Technology - IT</option>
+<option value="ece">Electronics and Communication Engineering - ECE</option>
+<option value="eee">Electrical and Electronics Engineering - EEE</option>
+<option value="civ">Civil Engineering - CIV</option>
+<option value="mec">Mechanical Engineering - MEC</option>
+</select>
+</p>
+
+<br />
+<div class="u"><h2 align="center">Year of passing and Date of birth</h2></div>
+<p ><b>Date of Birth:</b><br /><br />
+<input type="date" ><br /><br />
+<b>Year of passing:</b><br /><br />
+<input type="date" id="yop"><br />
+
+<br />
+<div class="t"><h2 align="center">Technical skills</h2></div>
+<p ><b>Select your technical skill:</b><br /><br />
+<input type="checkbox" id="ts">Java<br />
+<input type="checkbox" id="ts1">C<br />
+<input type="checkbox" id="ts2">C++<br />
+<input type="checkbox" id="ts3">DBMS<br />
+<input type="checkbox" id="ts4">CCNA<br />
+<input type="checkbox" id="ts5">TESTING<br /></p><br />
+<input type="submit" name="sub" value="Submit" >
+</form>
+
+</body>
+</html>
